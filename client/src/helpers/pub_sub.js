@@ -1,4 +1,5 @@
-const PubSub = {
+let PubSub;
+export default PubSub = {
   publish: function (channel, payload) {
     var event = new CustomEvent(channel, {
       detail: payload
@@ -10,5 +11,3 @@ const PubSub = {
     document.addEventListener(channel, callback);
   }
 };
-
-module.exports = PubSub;
